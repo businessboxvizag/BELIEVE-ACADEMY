@@ -1,24 +1,25 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbz0MHLP3Mkwu1zLRTRU_g9THeu8lbghtES-0w5Ao1Hqa12yarwTpqpJOztpBmLsdoXU/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzYSMqsa60fHph-ZD9KJhNw0kYn_4tY4zc4vCxgnm-Agn1aRtZLFlwx1QfJxYU6qDKd/exec";
 
 const form = document.getElementById("enquiryForm");
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", function(e) {
 
-e.preventDefault();
+  e.preventDefault();
 
-const data = {
-studentName: form.studentName.value,
-phone: form.phone.value,
-message: form.message.value
-};
+  const formData = new FormData(form);   // ✅ IMPORTANT CHANGE
 
-fetch(scriptURL,{
-method:"POST",
-body:JSON.stringify(data)
-})
-.then(()=>{
-alert("Enquiry submitted");
-form.reset();
-});
+  fetch(scriptURL, {
+    method: "POST",
+    body: formData                      // ✅ NO headers, NO JSON
+  })
+  .then(response => response.text())
+  .then(data => {
+    alert("Enquiry submitted successfully!");
+    form.reset();
+  })
+  .catch(error => {
+    console.error("Error!", error);
+    alert("Something went wrong!");
+  });
 
 });
