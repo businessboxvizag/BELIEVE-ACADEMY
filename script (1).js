@@ -1,25 +1,46 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbzYSMqsa60fHph-ZD9KJhNw0kYn_4tY4zc4vCxgnm-Agn1aRtZLFlwx1QfJxYU6qDKd/exec";
+document.addEventListener("DOMContentLoaded", function(){
 
-const form = document.getElementById("enquiryForm");
+  const popup = document.getElementById("popup");
 
-form.addEventListener("submit", function(e) {
+  // SHOW POPUP FIRST TIME
+  if(popup){
+    popup.style.display = "flex";
+  }
 
-  e.preventDefault();
+  // FORM (unchanged)
+  const form = document.getElementById("enquiryForm");
 
-  const formData = new FormData(form);   // ✅ IMPORTANT CHANGE
+  if(form){
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
 
-  fetch(scriptURL, {
-    method: "POST",
-    body: formData                      // ✅ NO headers, NO JSON
-  })
-  .then(response => response.text())
-  .then(data => {
-    alert("Enquiry submitted successfully!");
-    form.reset();
-  })
-  .catch(error => {
-    console.error("Error!", error);
-    alert("Something went wrong!");
-  });
+      const formData = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbzYSMqsa60fHph-ZD9KJhNw0kYn_4tY4zc4vCxgnm-Agn1aRtZLFlwx1QfJxYU6qDKd/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(res => res.text())
+      .then(() => {
+        alert("Enquiry submitted successfully!");
+        form.reset();
+      })
+      .catch(() => {
+        alert("Something went wrong!");
+      });
+
+    });
+  }
 
 });
+
+// CLOSE + REOPEN AFTER 30s
+function closePopup(){
+  const popup = document.getElementById("popup");
+  popup.style.display = "none";
+
+  // REOPEN AFTER 30 SECONDS
+  setTimeout(() => {
+    popup.style.display = "flex";
+  }, 20000); // 30000 ms = 30 sec
+}
