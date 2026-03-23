@@ -1,190 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="businessBOX: High-growth agency helping Vizag businesses scale nationally with premium branding, web development, and marketing solutions. Free strategy session available.">
+    <meta name="keywords" content="business growth agency, Vizag marketing, branding services, web development, digital marketing, business expansion, sovereignty ecosystem">
+    <link rel="canonical" href="https://yourwebsite.com/">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:title" content="businessBOX | High-Growth Agency">
+    <meta property="og:description" content="Helping businesses scale from local to national brands using the Sovereignty Ecosystem.">
+    <meta property="og:image" content="https://yourwebsite.com/logo.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com/">
+    <meta property="twitter:title" content="businessBOX | High-Growth Agency">
+    <meta property="twitter:description" content="Helping businesses scale from local to national brands using the Sovereignty Ecosystem.">
+    <meta property="twitter:image" content="https://yourwebsite.com/logo.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>businessBOX | High-Growth Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; }
+        
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .gradient-text { background: linear-gradient(90deg, #00AEEF, #ffffff); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo-glow { filter: drop-shadow(0 0 8px rgba(0, 174, 239, 0.4)); }
+        .btn-glow:hover { box-shadow: 0 0 25px rgba(0, 174, 239, 0.5); transform: translateY(-2px); }
+        
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+        .animate-float { animation: float 4s ease-in-out infinite; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0.3; } }
+        .blink-animation { animation: blink 2s ease-in-out infinite; }
 
-<title>Believe Academy | EAPCET Coaching Vizag</title>
+        /* Crazy WhatsApp Button Animations */
+        @keyframes crazyBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
+            40% { transform: translateY(-10px) scale(1.1); }
+            60% { transform: translateY(-5px) scale(1.05); }
+        }
+        
+        @keyframes crazyGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(37, 211, 102, 0.6), 0 0 40px rgba(37, 211, 102, 0.4), 0 0 60px rgba(37, 211, 102, 0.2);
+                filter: brightness(1);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(37, 211, 102, 0.9), 0 0 60px rgba(37, 211, 102, 0.7), 0 0 90px rgba(37, 211, 102, 0.5);
+                filter: brightness(1.2);
+            }
+        }
+        
+        @keyframes crazyShake {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            10% { transform: translateX(-2px) rotate(-1deg); }
+            20% { transform: translateX(2px) rotate(1deg); }
+            30% { transform: translateX(-2px) rotate(-1deg); }
+            40% { transform: translateX(2px) rotate(1deg); }
+            50% { transform: translateX(-1px) rotate(-0.5deg); }
+            60% { transform: translateX(1px) rotate(0.5deg); }
+            70% { transform: translateX(-1px) rotate(-0.5deg); }
+            80% { transform: translateX(1px) rotate(0.5deg); }
+            90% { transform: translateX(-0.5px) rotate(-0.25deg); }
+        }
+        
+        @keyframes crazyPulse {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.05); }
+            50% { transform: scale(1.1); }
+            75% { transform: scale(0.95); }
+        }
+        
+        @keyframes crazyRotate {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+        
+        .crazy-whatsapp {
+            animation: 
+                crazyBounce 3s ease-in-out infinite,
+                crazyGlow 2s ease-in-out infinite,
+                crazyShake 4s ease-in-out infinite,
+                crazyPulse 1.5s ease-in-out infinite,
+                crazyRotate 6s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+        
+        .crazy-whatsapp:hover {
+            animation-play-state: paused;
+            transform: scale(1.2) !important;
+            box-shadow: 0 0 50px rgba(37, 211, 102, 1), 0 0 100px rgba(37, 211, 102, 0.8) !important;
+        }
 
-<meta name="description" content="Best EAPCET & POLYCET coaching in Visakhapatnam">
+        /* Counter Styling */
+        .stat-card { border-left: 2px solid rgba(0, 174, 239, 0.3); padding-left: 1.5rem; }
 
-<link rel="stylesheet" href="style.css">
+        /* Lead Capture Popup */
+        .popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 1rem; }
+        .popup-content { background: rgba(5, 5, 5, 0.95); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 1.5rem; max-width: 500px; width: 100%; position: relative; transform: scale(0.7); opacity: 0; transition: all 0.3s ease; max-height: 90vh; overflow-y: auto; }
+        .popup-content.show { transform: scale(1); opacity: 1; }
+        .popup-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; z-index: 10001; }
+        .popup-form input, .popup-form textarea, .popup-form select { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; padding: 0.75rem; border-radius: 10px; width: 100%; margin-bottom: 1rem; font-size: 16px; }
+        .popup-form input:focus, .popup-form textarea:focus, .popup-form select:focus { border-color: #00AEEF; outline: none; }
+        .popup-form button { background: #00AEEF; color: white; border: none; padding: 0.75rem 2rem; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; transition: all 0.3s; font-size: 16px; }
+        .popup-form button:hover { box-shadow: 0 0 15px rgba(0, 174, 239, 0.5); transform: translateY(-1px); }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .stat-card { padding-left: 1rem; margin-bottom: 2rem; }
+            .stat-card h3 { font-size: 2.5rem; }
+            .stat-card p { font-size: 0.75rem; }
+            
+            nav .glass { padding: 0.75rem 1rem; }
+            nav img { height: 3rem; width: auto; }
+            
+            .hero-logo { height: 4rem !important; }
+            .hero-title { font-size: 2.5rem !important; line-height: 1.1 !important; }
+            .hero-subtitle { font-size: 1rem !important; padding: 0 1rem; }
+            .hero-button { padding: 1rem 2rem !important; font-size: 1rem !important; }
+            
+            .services-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .service-card { padding: 1.5rem !important; }
+            .service-card h3 { font-size: 1.5rem; }
+            .service-card p { font-size: 0.9rem; }
+            
+            .director-section { padding: 2rem 1rem; }
+            .director-content { flex-direction: column; text-align: center; gap: 2rem; }
+            .director-image { width: 200px; height: 200px; }
+            .director-text h2 { font-size: 1.75rem; }
+            .director-text p { font-size: 1rem; }
+            
+            .enquiry-section { padding: 2rem 1rem; }
+            .enquiry-form { padding: 1.5rem !important; }
+            .enquiry-form h2 { font-size: 2rem; }
+            .enquiry-form p { font-size: 0.9rem; }
+            
+            .footer { padding: 2rem 1rem; }
+            .footer img { height: 6rem; }
+            
+            /* Floating buttons mobile positioning */
+            .floating-btn { width: 3rem !important; height: 3rem !important; font-size: 1.25rem !important; }
+            .whatsapp-btn { bottom: 1rem !important; right: 1rem !important; }
+            .scroll-btn { bottom: 1rem !important; left: 1rem !important; }
+            
+            /* Reduce crazy animations on mobile for better performance */
+            @media (max-width: 768px) {
+                .crazy-whatsapp {
+                    animation: 
+                        crazyBounce 4s ease-in-out infinite,
+                        crazyGlow 3s ease-in-out infinite,
+                        crazyPulse 2s ease-in-out infinite;
+                }
+            }
+            
+            /* Mobile menu improvements */
+            #mobile-menu { 
+                padding: 1rem; 
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+            }
+            #mobile-menu a { 
+                font-size: 1rem; 
+                padding: 0.75rem 0;
+                display: block;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                transition: all 0.2s ease;
+            }
+            #mobile-menu a:hover { 
+                background: rgba(255, 255, 255, 0.05);
+                padding-left: 1rem;
+            }
+        }
 
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2rem !important; }
+            .service-card { padding: 1rem !important; }
+            .director-text h2 { font-size: 1.5rem; }
+            .enquiry-form h2 { font-size: 1.75rem; }
+            .floating-btn { width: 2.75rem !important; height: 2.75rem !important; font-size: 1rem !important; }
+        }
+
+        /* Touch-friendly buttons */
+        button, .btn-glow, .floating-btn { min-height: 44px; min-width: 44px; }
+        
+        /* Prevent zoom on input focus */
+        input[type="text"], input[type="tel"], input[type="email"], textarea, select { 
+            font-size: 16px !important; 
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        /* Prevent horizontal scroll */
+        html, body { overflow-x: hidden; }
+
+        /* Smooth scrolling for mobile */
+        html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+
+        /* Better touch targets */
+        a, button { touch-action: manipulation; }
+
+        /* Loading states for better UX */
+        .loading { opacity: 0.6; pointer-events: none; }
+    </style>
 </head>
-
 <body>
 
-<header>
-<div class="logo">
-<span class="brand-text">STANLEY ENTERPRISES</span>
-</div>
-<a class="whatsapp" href="https://wa.me/918688669816">WhatsApp</a>
-</header>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#00AEEF] text-white px-4 py-2 rounded">Skip to main content</a>
 
-<section class="hero">
-<div class="hero-content">
-<img src="believe.png" class="hero-logo">
-<h1>Vizag's Best EAPCET & POLYCET Coaching Center</h1>
-<a href="#enquiry" class="demo-btn">Book a Demo Class</a>
-</div>
-</section>
+    <nav class="fixed top-0 w-full z-[100] glass py-3 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2 ml-7" data-aos="fade-right">
+                <img src="bblogo.png" alt="businessBOX Logo" class="h-20 w-30 logo-glow hover:scale-105 transition duration-300" loading="lazy">
+            </div>
+            <div class="lg:hidden">
+                <button id="mobile-menu-btn" class="text-white focus:outline-none" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div class="hidden lg:flex space-x-8 text-sm md:text-base font-bold uppercase tracking-widest text-gray-400">
+                <a href="#stats" class="hover:text-blue-400 transition">Experience</a>
+                <a href="#services" class="hover:text-blue-400 transition">Services</a>
+                <a href="#director" class="hover:text-blue-400 transition">The Vision</a>
+                <a href="#enquiry" class="hover:text-blue-400 transition">Enquire</a>
+            </div>
+            <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-black/90 glass py-4 px-6">
+                <div class="flex flex-col space-y-4 text-center">
+                    <a href="#stats" class="hover:text-blue-400 transition">Experience</a>
+                    <a href="#services" class="hover:text-blue-400 transition">Services</a>
+                    <a href="#director" class="hover:text-blue-400 transition">The Vision</a>
+                    <a href="#enquiry" class="hover:text-blue-400 transition">Enquire</a>
+                </div>
+            </div>
+            <a href="https://wa.me/918688669816" class="bg-[#00AEEF] text-white px-6 py-2 rounded-lg font-bold text-sm btn-glow transition-all">WHATSAPP: 8688669816</a>
+        </div>
+    </nav>
 
-<section class="description">
-<h2>About Us</h2>
-<p>
-Believe Academy is a dedicated educational institute in Visakhapatnam focused on building strong foundations, confidence, and academic excellence in students.
-</p>
-<p>
-We provide coaching for EAPCET, POLYCET, NEET, JEE-Mains, along with 1st–10th class tuitions and Intermediate Board preparation in a calm and supportive environment.
-</p>
-</section>
+    <section id="main-content" class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        <div class="absolute w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[150px] top-[-10%] right-[-10%]"></div>
+        <div class="text-center px-6 relative z-10" data-aos="zoom-out" data-aos-duration="1500">
 
-<!-- ✅ UPDATED SERVICES SECTION -->
-<section class="why-section services-fix services-unique">
+    <!-- LOGO ABOVE HEADING -->
+    <img src="logo.png"
+         alt="businessBOX Logo"
+         class="mx-auto mb-6 h-25 md:h-24 logo-glow hero-logo" loading="lazy">
+            <h1 class="text-6xl md:text-[90px] font-extrabold mb-6 leading-none tracking-tighter uppercase hero-title">
+                Dominating the <br><span class="gradient-text">Vizag's Market</span>
+            </h1>
+            <p class="max-w-3xl mx-auto text-gray-400 text-lg md:text-xl mb-12 font-light hero-subtitle">
+                Helping Your Business scale from local to national brands using the <strong>Sovereignty Ecosystem</strong>.
+            </p>
+            <a href="#enquiry" class="bg-white text-black px-12 py-5 rounded-2xl font-black text-lg btn-glow transition-all hero-button">START YOUR EXPANSION</a>
+        </div>
+    </section>
 
-<h2>Services Offered</h2>
+    <section id="stats" class="py-24 px-6 border-y border-white/5 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div class="stat-card" data-aos="fade-up">
+                <h3 class="text-5xl font-black text-[#00AEEF] mb-2" data-target="20" data-suffix="+">0+</h3>
+                <p class="text-gray-500 uppercase tracking-widest text-xs font-bold">Successful Projects</p>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-5xl font-black text-white mb-2" data-target="5" data-suffix="+">0+</h3>
+                <p class="text-gray-500 uppercase tracking-widest text-xs font-bold">Years Industry Exp.</p>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-5xl font-black text-[#00AEEF] mb-2" data-target="300" data-suffix="%">0%</h3>
+                <p class="text-gray-500 uppercase tracking-widest text-xs font-bold">Average Client Growth</p>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-5xl font-black text-white mb-2" data-target="24" data-suffix="/7">0/7</h3>
+                <p class="text-gray-500 uppercase tracking-widest text-xs font-bold">Management Support</p>
+            </div>
+        </div>
+    </section>
 
-<div class="why-container">
+    <section id="services" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 text-center">
+                <span class="text-[#00AEEF] font-bold tracking-widest uppercase text-sm">Our Core Offerings</span>
+                <h2 class="text-5xl font-black mt-4 uppercase italic">The Growth Trinity</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10 services-grid">
+                <div class="glass p-12 rounded-[40px] border-l-4 border-l-[#00AEEF] transition-all hover:scale-105 service-card" data-aos="fade-right">
+                    <div class="text-4xl mb-8"><i class="fas fa-gem text-[#00AEEF]"></i></div>
+                    <h3 class="text-3xl font-bold mb-6 italic">Establishment</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">The foundation of your empire. We handle the <strong>Physical Identity</strong> that makes you premium.</p>
+                    <ul class="space-y-4 text-sm font-semibold">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#00AEEF]"></i> 3D Premium Logo Design</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#00AEEF]"></i> Professional Visiting Cards</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#00AEEF]"></i> Brand Identity Guides</li>
+                        <li class="text-gray-400">...and more..</li>
+                    </ul>
+                </div>
 
-<div class="why-card service-card">
-<div class="service-icon">🎓</div>
-<h3>EAPCET COACHING</h3>
-<p>Comprehensive preparation for engineering entrance exams.</p>
-<a href="#enquiry" class="service-btn">Enquire Now</a>
-</div>
+                <div class="glass p-12 rounded-[40px] border-l-4 border-l-white transition-all hover:scale-105 service-card" data-aos="fade-up">
+                    <div class="text-4xl mb-8"><i class="fas fa-chart-line text-white"></i></div>
+                    <h3 class="text-3xl font-bold mb-6 italic">Expansion</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">Getting your business in front of the <strong>Right Eyes</strong>. We build the engine that drives leads.</p>
+                    <ul class="space-y-4 text-sm font-semibold">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#00AEEF]"></i> High-Speed Web Development</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#00AEEF]"></i> Google Ads & Meta Ads</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#00AEEF]"></i> Local SEO Domination</li>
+                        <li class="text-gray-400">...and more..</li>
+                    </ul>
+                </div>
 
-<div class="why-card service-card">
-<div class="service-icon">📘</div>
-<h3>POLYCET COACHING</h3>
-<p>Focused training to help students secure top ranks.</p>
-<a href="#enquiry" class="service-btn">Enquire Now</a>
-</div>
+                <div class="glass p-12 rounded-[40px] border-l-4 border-l-[#00AEEF] transition-all hover:scale-105 service-card" data-aos="fade-left">
+                    <div class="text-4xl mb-8"><i class="fas fa-crown text-[#00AEEF]"></i></div>
+                    <h3 class="text-3xl font-bold mb-6 italic">Sovereignty</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">The ultimate level. We turn you into an <strong>Industry Leader</strong> who commands higher prices.</p>
+                    <ul class="space-y-4 text-sm font-semibold">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#00AEEF]"></i> Personal Branding Systems</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#00AEEF]"></i> Business Automation</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#00AEEF]"></i> 360° Vision Strategy</li>
+                        <li class="text-gray-400">...and more..</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="why-card service-card">
-<div class="service-icon">🚀</div>
-<h3>IIT-JEE FOUNDATION CLASSES</h3>
-<p>Strong foundation building for future IIT aspirants.</p>
-<a href="#enquiry" class="service-btn">Enquire Now</a>
-</div>
+    <section id="director" class="py-20 px-6 director-section">
+        <div class="max-w-6xl mx-auto glass p-10 md:p-20 rounded-[60px] flex flex-col md:flex-row items-center gap-16 director-content" data-aos="fade-up">
+            <div class="md:w-1/3">
+                <img src="vds.png"
+                     alt="David Stanley"
+                     class="w-full h-full object-cover rounded-[40px] border-4 border-[#00AEEF]/30 shadow-2xl hover:scale-105 transition duration-500 director-image" loading="lazy">
+            </div>
+            <div class="md:w-2/3 director-text">
+                <i class="fas fa-quote-left text-5xl text-[#00AEEF] mb-8 block"></i>
+                <h2 class="text-4xl font-black mb-6">Building the Future of Vizag Businesses.</h2>
+                <p class="text-gray-300 text-xl italic leading-relaxed mb-10">
+                    "Success isn't about working harder; it's about building a box that keeps your management on track. My goal for businessBOX is to provide every local business the scale of a corporate giant."
+                </p>
+                <div class="font-black text-2xl uppercase tracking-widest">David Stanley</div>
+                <div class="text-[#00AEEF] font-bold">Managing Director, Stanley Enterprises</div>
+            </div>
+        </div>
+    </section>
 
-<div class="why-card service-card">
-<div class="service-icon">🩺</div>
-<h3>NEET FOUNDATION CLASSES</h3>
-<p>Early preparation for medical entrance success.</p>
-<a href="#enquiry" class="service-btn">Enquire Now</a>
-</div>
+    <section id="enquiry" class="py-22 px-6 enquiry-section">
+        <div class="max-w-4xl w-full md:w-[65%] mx-auto text-center glass p-10 md:p-20 rounded-[50px] border-t-8 border-[#00AEEF] enquiry-form" data-aos="zoom-in">
+            <h2 class="text-5xl font-black mb-8">Ready to Scale?</h2>
+            <p class="text-gray-400 mb-12">Submit your details below for a <strong>Free Strategy Session</strong> with David.</p>
+            <form class="grid md:grid-cols-2 gap-6 text-left">
+                <div class="space-y-2">
+                    <label class="text-xs uppercase font-bold text-gray-500">Your Full Name</label>
+                    <input type="text" name="fullName" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl outline-none focus:border-[#00AEEF]" required>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs uppercase font-bold text-gray-500">Phone Number</label>
+                    <input type="tel" name="phone" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl outline-none focus:border-[#00AEEF]" required>
+                </div>
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-xs uppercase font-bold text-gray-500">Your Business Name</label>
+                    <input type="text" name="businessName" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl outline-none focus:border-[#00AEEF]" required>
+                </div>
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-xs uppercase font-bold text-gray-500">Tell us a bit about your business</label>
+                    <textarea name="businessDescription" rows="4" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl outline-none focus:border-[#00AEEF] text-gray-300"></textarea>
+                </div>
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-xs uppercase font-bold text-gray-500">I am interested in...</label>
+                    <select name="packageInterest" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl outline-none focus:border-[#00AEEF] text-gray-400">
+                        <option>Establishment Package</option>
+                        <option>Expansion Package</option>
+                        <option>Sovereignty (Full Empire) Package</option>
+                    </select>
+                </div>
+                <button class="md:col-span-2 bg-[#00AEEF] p-6 rounded-2xl font-black text-xl btn-glow uppercase tracking-widest" aria-label="Submit enquiry form">Request My Strategy Call</button>
+            </form>
+        </div>
+    </section>
 
-<div class="why-card service-card">
-<div class="service-icon">📚</div>
-<h3>1–10th Class Tuitions</h3>
-<p>All subjects for SSC, CBSE, ICSE boards.</p>
-<a href="#enquiry" class="service-btn">Enquire Now</a>
-</div>
+    <footer class="py-40 text-center text-gray-600 footer">
+        <img src="logo.png" class="h-40 mx-auto mb-6 opacity-30" loading="lazy">
+        <p>&copy; 2026 businessBOX | A Stanley Enterprise Organization</p>
+    </footer>
 
-</div>
+    <a href="https://wa.me/918688669816?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20business%20growth%20services." class="fixed bottom-10 right-10 bg-[#25D366] w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all z-[1000] blink-animation floating-btn whatsapp-btn crazy-whatsapp" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-</section>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-10 left-10 bg-[#00AEEF] w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all z-[1000] floating-btn scroll-btn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-<section class="why-section">
-<h2>Why Choose Believe Academy</h2>
+    <!-- Lead Capture Popup -->
+    <div id="lead-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <h2 class="text-xl md:text-2xl font-bold mb-4 gradient-text">Get Your Free Strategy Session</h2>
+            <p class="text-gray-400 mb-6 text-sm md:text-base">Ready to scale your business? Fill out the form below and we'll get back to you within 24 hours.</p>
+            <form class="popup-form" id="popup-form">
+                <input type="text" name="fullName" placeholder="Your Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="text" name="businessName" placeholder="Business Name" required>
+                <select name="packageInterest" required>
+                    <option value="">Select Package Interest</option>
+                    <option>Establishment Package</option>
+                    <option>Expansion Package</option>
+                    <option>Sovereignty (Full Empire) Package</option>
+                </select>
+                <textarea name="businessDescription" rows="3" placeholder="Tell us about your business (optional)"></textarea>
+                <button type="submit">Get My Free Strategy Call</button>
+            </form>
+        </div>
+    </div>
 
-<div class="why-container">
+    <script>
+        AOS.init({ duration: 1000, once: true });
 
-<div class="why-card">
-<h3>Small Batch</h3>
-<p>Maximum 30 students per batch for personal attention.</p>
-</div>
+        function animateCounter(el, target) {
+            const duration = 1800;
+            let start = 0;
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * target);
+                el.textContent = (target % 1 === 0 ? current : (current).toFixed(0)) + (el.dataset.suffix || '');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    el.textContent = target + (el.dataset.suffix || '');
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
 
-<div class="why-card">
-<h3>100% Calm & Focused Environment</h3>
-<p>Peaceful environment designed for distraction-free learning.</p>
-</div>
+        function startStatsAnimation() {
+            document.querySelectorAll('.stat-card h3').forEach((h3) => {
+                const target = Number(h3.dataset.target);
+                if (isNaN(target)) return;
+                animateCounter(h3, target);
+            });
+        }
 
-<div class="why-card">
-<h3>Expert Faculty</h3>
-<p>Experienced teachers guiding students with effective teaching methods.</p>
-</div>
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startStatsAnimation();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
 
-<div class="why-card">
-<h3>Individual Mentorship</h3>
-<p>Personal guidance and academic support for every student.</p>
-</div>
+        statsObserver.observe(document.querySelector('#stats'));
+    </script>
+    <script>
+        // Mobile menu toggle with improved UX
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const isHidden = menu.classList.contains('hidden');
+            
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                // Add a small delay for smooth animation
+                setTimeout(() => {
+                    menu.style.opacity = '1';
+                    menu.style.transform = 'translateY(0)';
+                }, 10);
+            } else {
+                menu.style.opacity = '0';
+                menu.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300);
+            }
+        });
 
-<div class="why-card">
-<h3>Exam-Oriented Preparation</h3>
-<p>Structured preparation designed for engineering entrance exams.</p>
-</div>
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const menu = document.getElementById('mobile-menu');
+                menu.style.opacity = '0';
+                menu.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300);
+            });
+        });
 
-<div class="why-card">
-<h3>Modern Teaching + Traditional Values</h3>
-<p>Blending modern teaching techniques with strong traditional values.</p>
-</div>
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            
+            if (!menu.classList.contains('hidden') && 
+                !menu.contains(e.target) && 
+                !menuBtn.contains(e.target)) {
+                menu.style.opacity = '0';
+                menu.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300);
+            }
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector("section#enquiry form");
+      const URL = "https://script.google.com/macros/s/AKfycbwVx3MGZ8Ij2Q3c9VJi8OWiEdM0D51t8KAUk5NNWmQ_1NHTFQcnmRGaGgQcFoDvocQi7g/exec";
 
-</div>
-</section>
+      if (!form) {
+        console.error("Unable to find #enquiry form.");
+        return;
+      }
 
-<!-- IMAGE SLIDER -->
-<section class="image-slider">
-<div class="slider">
-<img src="slide1.jpeg">
-<img src="slide2.jpeg">
-<img src="slide3.jpeg">
-<img src="slide4.jpeg">
-<img src="slide5.jpeg">
-<img src="slide6.jpeg">
-<img src="slide7.jpeg">
-<img src="slide8.jpeg">
-</div>
-</section>
+      const submitForm = async (payload, mode) => {
+        return fetch(URL, {
+          method: "POST",
+          mode,
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+      };
 
-<!-- ENQUIRY FORM -->
-<section id="enquiry" class="enquiry">
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const payload = {
+          fullName: formData.get("fullName"),
+          phone: formData.get("phone"),
+          businessName: formData.get("businessName"),
+          businessDescription: formData.get("businessDescription"),
+          packageInterest: formData.get("packageInterest"),
+        };
 
-<h2>Admission Enquiry</h2>
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
 
-<form id="enquiryForm">
+        // Build WhatsApp message
+        const message = `*New Enquiry from businessBOX Website*\n\n` +
+          `👤 Full Name: ${payload.fullName}\n` +
+          `📞 Phone: ${payload.phone}\n` +
+          `🏢 Business Name: ${payload.businessName}\n` +
+          `📝 Business Description: ${payload.businessDescription}\n` +
+          `🎯 Interested in: ${payload.packageInterest}\n\n` +
+          `Please follow up!`;
 
-<input type="text" name="studentName" placeholder="Student Name" required>
+        const whatsappUrl = `https://wa.me/918688669816?text=${encodeURIComponent(message)}`;
 
-<input type="tel" name="phone" placeholder="Parent Phone Number" required>
 
-<input type="text" name="college" placeholder="College / School Name">
+        // Open WhatsApp with pre-filled message
+        window.open(whatsappUrl, '_blank');
 
-<textarea name="message" placeholder="Message"></textarea>
+        alert("Form submitted! WhatsApp opened with your enquiry details. Please send the message to complete submission.");
+        form.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      });
+      });
+    </script>
 
-<button type="submit">Submit Enquiry</button>
+    <!-- Lead Capture Popup Script -->
+    <script>
+      let popupShown = false;
+      let scrollTriggered = false;
 
-</form>
+      function showPopup() {
+        if (!popupShown) {
+          const popup = document.getElementById('lead-popup');
+          popup.style.display = 'flex';
+          setTimeout(() => {
+            popup.querySelector('.popup-content').classList.add('show');
+          }, 100);
+          popupShown = true;
+        }
+      }
 
-</section>
+      function closePopup() {
+        const popup = document.getElementById('lead-popup');
+        popup.querySelector('.popup-content').classList.remove('show');
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 300);
+      }
 
-<footer class="footer">
-<div class="footer-box">
-<h3>Contact Us</h3>
-<p>📞 Phone: +91 8688669816</p>
-<p>📧 Email: believeacademy@gmail.com</p>
-<p>📍 Location: Visakhapatnam, Andhra Pradesh</p>
-</div>
+      // Show popup after 10 seconds
+      setTimeout(() => {
+        if (!popupShown) {
+          showPopup();
+        }
+      }, 10000);
 
-<div class="footer-bottom">
-<p>© 2026 Stanley Enterprises. All Rights Reserved.</p>
-</div>
-</footer>
+      // Show popup after scrolling 50% of the page
+      window.addEventListener('scroll', () => {
+        if (!scrollTriggered && !popupShown) {
+          const scrollTop = window.pageYOffset;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercent = (scrollTop / docHeight) * 100;
+          
+          if (scrollPercent > 50) {
+            scrollTriggered = true;
+            setTimeout(() => {
+              if (!popupShown) {
+                showPopup();
+              }
+            }, 2000); // Wait 2 seconds after reaching 50%
+          }
+        }
+      });
 
-<!-- POPUP -->
-<div id="popup" class="popup" style="display:none;">
-  <div class="popup-content">
-    <span class="close-btn" onclick="closePopup()">×</span>
-    <img src="popup.jpeg" alt="Popup Image">
-  </div>
-</div>
+      // Close popup when clicking overlay
+      document.getElementById('lead-popup').addEventListener('click', (e) => {
+        if (e.target.id === 'lead-popup') {
+          closePopup();
+        }
+      });
 
-<!-- JAVASCRIPT -->
-<script src="script.js"></script>
+      // Handle popup form submission
+      document.getElementById('popup-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const payload = {
+          fullName: formData.get('fullName'),
+          phone: formData.get('phone'),
+          email: formData.get('email'),
+          businessName: formData.get('businessName'),
+          businessDescription: formData.get('businessDescription') || 'Not provided',
+          packageInterest: formData.get('packageInterest'),
+          source: 'Lead Capture Popup'
+        };
 
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        // Build WhatsApp message
+        const message = `*New Lead from Popup - businessBOX Website*\n\n` +
+          `👤 Full Name: ${payload.fullName}\n` +
+          `📧 Email: ${payload.email}\n` +
+          `📞 Phone: ${payload.phone}\n` +
+          `🏢 Business Name: ${payload.businessName}\n` +
+          `📝 Business Description: ${payload.businessDescription}\n` +
+          `🎯 Interested in: ${payload.packageInterest}\n` +
+          `📍 Source: ${payload.source}\n\n` +
+          `Please follow up!`;
+
+        const whatsappUrl = `https://wa.me/918688669816?text=${encodeURIComponent(message)}`;
+
+        // Open WhatsApp with pre-filled message
+        window.open(whatsappUrl, '_blank');
+
+        alert("Thank you! WhatsApp opened with your details. Please send the message to complete your enquiry.");
+        e.target.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        closePopup();
+      });
+    </script>
 </body>
 </html>
